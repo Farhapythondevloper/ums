@@ -1,0 +1,20 @@
+h1{
+    background-color: rgb(110, 156, 110) !important;
+    /* font-size: 25px; */
+    margin: 15px;
+    font-size: 30px;
+    color: beige;
+
+}
+
+
+
+.heading{
+    background-color: rgb(46, 114, 46) !important;
+
+}
+
+form{
+    margin: 10px;
+    background-color: rgb(240, 245, 245);
+}

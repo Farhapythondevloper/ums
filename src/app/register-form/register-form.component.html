@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6 mt-3">
+            <mat-card>
+                <div class="heading">
+                    <h1 class="heading text-center">Registration Form</h1>
+                 <mat-divider></mat-divider>
+                </div>
+                 <form class="row mt-2" [formGroup]="signUpData" (ngSubmit)="registerUser()" >
+                    <div class="col-6 mb-2 mt-2">
+                        <label for="exampleInputEmail1" class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="fname" formControlName="fname" id="fname" aria-describedby="emailHelp">
+                      </div>
+
+                      <div class="col-6 mb-2 mt-2">
+                        <label for="exampleInputPassword1" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lname" name="lname" formControlName="lname">
+                      </div>
+
+                      <div class="col-6 mb-2">
+                        <label for="exampleInputPassword1" class="form-label">Phone No</label>
+                        <input type="text" class="form-control" id="phno" name="phno" formControlName="phno">
+                      </div>
+                      <div class="col-6 mb-2">
+                        <label for="exampleInputPassword1" class="form-label">DOB</label>
+                      
+                        <input type="date" class="form-control" id="dob" name="dob" formControlName="dob">
+                      </div>
+
+
+                      <mat-radio-group aria-label="Select an option" class="mt-3">
+                        <!-- <label class="form-label" for="inlineRadio1">Gender</label><br> -->
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" formControlName="gender" id="inlineRadio1" value="male">
+                          <label class="form-check-label" for="inlineRadio1">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gender" formControlName="gender" id="inlineRadio2" value="female">
+                          <label class="form-check-label" for="inlineRadio2">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="gender" formControlName="gender" id="inlineRadio3" value="other">
+                          <label class="form-check-label" for="inlineRadio3">Other</label>
+                        </div>
+                      </mat-radio-group>
+
+    
+
+
+                      <div class="col-12 mb-4 mt-3">
+                        <label for="exampleInputPassword1" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" formControlName="email" (change)="checkEmail($any($event.target).value)">
+                      </div>
+
+                      <div class="col-4 mb-2" >
+                        <div class="form-group">
+                        <label for="exampleInputPassword1" class="form-label">Country</label>
+                        <select class="form-select" aria-label="Default select example" name="countryId" formControlName="countryId" (change)="getStateByCountryId($any($event.target).value)">
+                            <option selected disabled>Select Country</option>
+                            <option *ngFor="let country of countryId | keyvalue" [value]="country.key">{{country.value}}</option>
+                            
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-4 mb-3">
+                        <div class="form-group">
+                        <label for="exampleInputPassword1" class="form-label">State</label>
+                        <select class="form-select" aria-label="Default select example" id="stateId" name="stateId" formControlName="stateId" (change)="getCityByStateId($any($event.target).value)">
+                            <option selected disabled>Select Your State</option>
+                            <option *ngFor="let state of stateId | keyvalue" [value]="state.key">{{state.value}}</option>
+                          </select>
+                      </div>
+                    </div>
+
+                      <div class="col-4 mb-3">
+                        <div class="form-group">
+                        <label for="exampleInputPassword1" class="form-label">City</label>
+                        <select class="form-select" aria-label="Default select example" id="cityId" name="cityId" formControlName="cityId">
+                            <option selected disabled>Select Your City</option>
+                            <option *ngFor="let city of  cityId | keyvalue" [value]="city.key">{{city.value}}</option>
+                          </select>
+                      </div>
+                    </div>
+                      <div class="justify-content-center mb-3">
+                        <button type="submit" mat-raised-button class="col-6 btn btn-success">Submit</button>
+                        <button type="reset" mat-raised-button class="col-6 btn btn-danger">Reset</button>
+                      </div>
+                 </form>
+                </mat-card> 
+        </div>
+    </div>
+</div>

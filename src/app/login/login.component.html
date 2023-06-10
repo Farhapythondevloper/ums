@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5 mt-5">
+           <mat-card >
+                <div class="heading">
+                    <h1 class=" heading text-center">Login Page</h1>
+                 <mat-divider></mat-divider>
+                </div>
+                 <form class="row mt-2" [formGroup]="login" (ngSubmit)="loginUser()">
+                    <div class="col-12 mb-2 mt-2">
+                        <label for="exampleInputEmail1" class="form-label">Email Id</label>
+                        <input type="email" class="form-control" name="email" formControlName="email" id="fname" aria-describedby="emailHelp">
+                      </div>
+
+                      <div class="col-12 mb-4">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="pwd" name="pwd" formControlName="pwd">
+                      </div>
+
+                      <ul><li><a href="/forgotpass">Forgot Password?</a></li></ul>
+                      <div class="justify-content-center mb-3">
+                        <button type="submit" mat-raised-button class="col-12 btn btn-success">Submit</button>
+                        
+                      </div>
+
+                    <div>
+                        <ul><li>Not a Member?<a href="register">  Signup Now</a></li></ul>
+                        
+                    </div>
+
+                 </form>
+                </mat-card> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+
+
+.heading{
+    background-color: rgb(46, 114, 46) !important;
+
+}
+h1{
+    margin: 15px;
+    font-size: 30px;
+    color: beige;
+}
+
+form{
+    margin: 10px;
+    background-color: rgb(240, 245, 245);
+}
+li{
+    
+    list-style: none;
+    
+}
+ul,li,a{
+    text-decoration: none;
+}
